@@ -1,0 +1,23 @@
+{
+  "name": "@red-cup-engineering/discord-community-moderation-planning-service",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Transport-free, non-executable Discord moderation review planning.",
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./src/index.mjs"
+    }
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:clean": "node scripts/clean-copy-check.mjs"
+  },
+  "dependencies": {
+    "@red-cup-engineering/computer-content-engineering-services-section": "workspace:*",
+    "@red-cup-engineering/cryptographic-computer-data-engineering-services-section": "workspace:*"
+  }
+}
