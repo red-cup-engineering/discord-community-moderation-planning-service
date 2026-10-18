@@ -5,8 +5,7 @@
   "description": "Transport-free, non-executable Discord moderation review planning.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/red-cup-engineering/computer-web-engineering-services-section.git",
-    "directory": "services/web-platform-services-section/services/web2-platform-services-section/services/discord-engineering-services-section/services/discord-community-moderation-planning-service"
+    "url": "git+https://github.com/red-cup-engineering/discord-community-moderation-planning-service.git"
   },
   "main": "./src/index.mjs",
   "exports": {
