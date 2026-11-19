@@ -123,7 +123,7 @@ export function validateModerationProposal(input) {
 }
 function pseudonym(key, purpose, guildId, label, value) { return `urn:discord:moderation:${label}:${createHmac("sha256", key).update(`v1\0${purpose}\0${guildId}\0${label}\0${value}`).digest("hex")}`; }
 /** Privacy projection omits every raw Discord identifier, reason, and evidence reference. */
-export function projectModerationReceipt(input, options) {
+export function projectModerationRecord(input, options) {
   const proposal = validateModerationProposal(input), value = plain(options, "receipt options"); keys(value, ["pseudonymKey", "purpose"], "receipt options"); if (typeof value.pseudonymKey !== "string" || value.pseudonymKey.length < 32) throw new TypeError("pseudonym key must contain at least 32 characters"); const purpose = id(value.purpose, "receipt purpose");
   return deepFreeze({ type: "DiscordModerationReviewReceiptProjection", version: 1, purpose, action: proposal.action, reversible: proposal.reversible, proposalPseudonym: pseudonym(value.pseudonymKey, purpose, proposal.guildId, "proposal", proposal.id), casePseudonym: pseudonym(value.pseudonymKey, purpose, proposal.guildId, "case", proposal.caseId), subjectPseudonym: pseudonym(value.pseudonymKey, purpose, proposal.guildId, "subject", proposal.subjectId), authorityPseudonym: pseudonym(value.pseudonymKey, purpose, proposal.guildId, "authority", proposal.authorityActorId), privacy: { omitted: ["proposalId", "caseId", "guildId", "subjectId", "authorityActorId", "reasonCode", "evidenceDigest"] } });
 }
