@@ -1,0 +1,39 @@
+{
+  "name": "@red-cup-engineering/discord-community-moderation-planning-service",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Transport-free, non-executable Discord moderation review planning.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/discord-community-moderation-planning-service.git"
+  },
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./src/index.mjs"
+    }
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test:clean": "node scripts/clean-copy-check.mjs"
+  },
+  "dependencies": {
+    "@red-cup-engineering/computer-content-address-engineering-services-section": "0.2.0",
+    "@red-cup-engineering/cryptographic-computer-data-engineering-services-section": "0.3.1"
+  },
+  "private": false,
+  "files": [
+    "package.json",
+    "README*",
+    "LICENSE*",
+    "src",
+    "scripts"
+  ],
+  "license": "MIT",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
+  }
+}
